@@ -64,10 +64,14 @@ const NavBar: React.FC<NavBarProps> = ({onSettingsClick}) => {
                         </li>
                     )}
                     <li>
-                        <a href="#" onClick={(e) => {
-                            e.preventDefault();
-                            togglePopup();
-                        }}><span className="fa-solid fa-gear"></span></a>
+                        {!isPopupOpen && (
+                            <a href="#" onClick={(e) => {
+                                e.preventDefault();
+                                togglePopup();
+                            }}>
+                                <span className="fa-solid fa-gear"></span>
+                            </a>
+                        )}
                         {isPopupOpen &&
                             <Popup handleClose={togglePopup} handleReset={handleReset} handleChange={handleChange}/>}
                     </li>

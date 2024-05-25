@@ -55,66 +55,66 @@ const searchMethods = {
 };
 
 export const ANNOUNCES = {
-    URL: "http://localhost:8080/api/announces",
+    URL: "http://localhost:4000/api/announces",
     METHOD: {
         GET: 'GET',
         POST: 'POST',
         PUT: 'PUT',
         DELETE: 'DELETE',
     },
-    ID: (id) => `http://localhost:8080/api/announces/${id}`,
+    ID: (id) => `http://localhost:4000/api/announces/${id}`,
     SEARCH: {
-        findByStartDate: (startDate) => generateSearchURL("http://localhost:8080/api/announces", searchMethods.ANNOUNCES, {startDate}),
-        findByTitle: (title) => generateSearchURL("http://localhost:8080/api/announces", searchMethods.ANNOUNCES, {title}),
-        findByAnnouncerId: (announcerId) => generateSearchURL("http://localhost:8080/api/announces", searchMethods.ANNOUNCES, {announcerId}),
-        findByPlantId: (plantId) => generateSearchURL("http://localhost:8080/api/announces", searchMethods.ANNOUNCES, {plantId}),
-        findByEndDate: (endDate) => generateSearchURL("http://localhost:8080/api/announces", searchMethods.ANNOUNCES, {endDate}),
+        findByStartDate: (startDate) => generateSearchURL("http://localhost:4000/api/announces", searchMethods.ANNOUNCES, {startDate}),
+        findByTitle: (title) => generateSearchURL("http://localhost:4000/api/announces", searchMethods.ANNOUNCES, {title}),
+        findByAnnouncerId: (announcerId) => generateSearchURL("http://localhost:4000/api/announces", searchMethods.ANNOUNCES, {announcerId}),
+        findByPlantId: (plantId) => generateSearchURL("http://localhost:4000/api/announces", searchMethods.ANNOUNCES, {plantId}),
+        findByEndDate: (endDate) => generateSearchURL("http://localhost:4000/api/announces", searchMethods.ANNOUNCES, {endDate}),
     },
 };
 
 export const SPECIES = {
-    URL: "http://localhost:8080/api/species",
+    URL: "http://localhost:4000/api/species",
     METHOD: {
         GET: 'GET',
         POST: 'POST',
         PUT: 'PUT',
         DELETE: 'DELETE',
     },
-    ID: (id) => `http://localhost:8080/api/species/${id}`,
+    ID: (id) => `http://localhost:4000/api/species/${id}`,
     SEARCH: {
-        findByName: (name) => generateSearchURL("http://localhost:8080/api/species", searchMethods.SPECIES, {name}),
+        findByName: (name) => generateSearchURL("http://localhost:4000/api/species", searchMethods.SPECIES, {name}),
     },
 };
 
 
 export const UPKEEPS = {
-    URL: "http://localhost:8080/api/upkeeps",
+    URL: "http://localhost:4000/api/upkeeps",
     METHOD: {
         GET: 'GET',
         POST: 'POST',
         PUT: 'PUT',
         DELETE: 'DELETE',
     },
-    ID: (id) => `http://localhost:8080/api/upkeeps/${id}`,
+    ID: (id) => `http://localhost:4000/api/upkeeps/${id}`,
     SEARCH: {
-        findByCaretakerId: (caretakerId) => generateSearchURL("http://localhost:8080/api/upkeeps", searchMethods.UPKEEPS, {caretakerId}),
-        findByStatus: (status) => generateSearchURL("http://localhost:8080/api/upkeeps", searchMethods.UPKEEPS, {status}),
-        findByPlantId: (plantId) => generateSearchURL("http://localhost:8080/api/upkeeps", searchMethods.UPKEEPS, {plantId}),
+        findByCaretakerId: (caretakerId) => generateSearchURL("http://localhost:4000/api/upkeeps", searchMethods.UPKEEPS, {caretakerId}),
+        findByStatus: (status) => generateSearchURL("http://localhost:4000/api/upkeeps", searchMethods.UPKEEPS, {status}),
+        findByPlantId: (plantId) => generateSearchURL("http://localhost:4000/api/upkeeps", searchMethods.UPKEEPS, {plantId}),
     },
 };
 
 export const COMMENTS = {
-    URL: "http://localhost:8080/api/comments",
+    URL: "http://localhost:4000/api/comments",
     METHOD: {
         GET: 'GET',
         POST: 'POST',
         PUT: 'PUT',
         DELETE: 'DELETE',
     },
-    ID: (id) => `http://localhost:8080/api/comments/${id}`,
+    ID: (id) => `http://localhost:4000/api/comments/${id}`,
     SEARCH: {
-        findByUserId: (userId) => generateSearchURL("http://localhost:8080/api/comments", searchMethods.COMMENTS, {userId}),
-        findByEntityTypeAndEntityId: (entityType, entityId) => generateSearchURL("http://localhost:8080/api/comments", searchMethods.COMMENTS, {
+        findByUserId: (userId) => generateSearchURL("http://localhost:4000/api/comments", searchMethods.COMMENTS, {userId}),
+        findByEntityTypeAndEntityId: (entityType, entityId) => generateSearchURL("http://localhost:4000/api/comments", searchMethods.COMMENTS, {
             entityType,
             entityId
         }),
@@ -122,74 +122,74 @@ export const COMMENTS = {
 };
 
 export const USERS = {
-    URL: "http://localhost:8080/api/users",
+    URL: "http://localhost:4000/api/users",
     METHOD: {
         GET: 'GET',
         POST: 'POST',
         PUT: 'PUT',
         DELETE: 'DELETE',
     },
-    ID: (id) => `http://localhost:8080/api/users/${id}`,
+    ID: (id) => `http://localhost:4000/api/users/${id}`,
     SEARCH: {
-        findByCountry: (country) => generateSearchURL("http://localhost:8080/api/users", searchMethods.USERS, {country}),
-        findByRoleId: (roleId) => generateSearchURL("http://localhost:8080/api/users", searchMethods.USERS, {roleId}),
-        findByLastName: (lastName) => generateSearchURL("http://localhost:8080/api/users", searchMethods.USERS, {lastName}),
-        findByUsername: (username) => generateSearchURL("http://localhost:8080/api/users", searchMethods.USERS, {username}),
-        findByFirstName: (firstName) => generateSearchURL("http://localhost:8080/api/users", searchMethods.USERS, {firstName}),
-        findByZipCode: (zipCode) => generateSearchURL("http://localhost:8080/api/users", searchMethods.USERS, {zipCode}),
-        findByStreetName: (streetName) => generateSearchURL("http://localhost:8080/api/users", searchMethods.USERS, {streetName}),
-        findByCity: (city) => generateSearchURL("http://localhost:8080/api/users", searchMethods.USERS, {city}),
+        findByCountry: (country) => generateSearchURL("http://localhost:4000/api/users", searchMethods.USERS, {country}),
+        findByRoleId: (roleId) => generateSearchURL("http://localhost:4000/api/users", searchMethods.USERS, {roleId}),
+        findByLastName: (lastName) => generateSearchURL("http://localhost:4000/api/users", searchMethods.USERS, {lastName}),
+        findByUsername: (username) => generateSearchURL("http://localhost:4000/api/users", searchMethods.USERS, {username}),
+        findByFirstName: (firstName) => generateSearchURL("http://localhost:4000/api/users", searchMethods.USERS, {firstName}),
+        findByZipCode: (zipCode) => generateSearchURL("http://localhost:4000/api/users", searchMethods.USERS, {zipCode}),
+        findByStreetName: (streetName) => generateSearchURL("http://localhost:4000/api/users", searchMethods.USERS, {streetName}),
+        findByCity: (city) => generateSearchURL("http://localhost:4000/api/users", searchMethods.USERS, {city}),
     },
 };
 
 
 export const CONVERSATIONS = {
-    URL: "http://localhost:8080/api/conversations",
+    URL: "http://localhost:4000/api/conversations",
     METHOD: {
         GET: 'GET',
         POST: 'POST',
         PUT: 'PUT',
         DELETE: 'DELETE',
     },
-    ID: (id) => `http://localhost:8080/api/conversations/${id}`,
+    ID: (id) => `http://localhost:4000/api/conversations/${id}`,
     SEARCH: {
-        findByUser1Id: (user1Id) => generateSearchURL("http://localhost:8080/api/conversations", searchMethods.CONVERSATIONS, {user1Id}),
-        findByUser1IdAndUser2Id: (user1Id, user2Id) => generateSearchURL("http://localhost:8080/api/conversations", searchMethods.CONVERSATIONS, {
+        findByUser1Id: (user1Id) => generateSearchURL("http://localhost:4000/api/conversations", searchMethods.CONVERSATIONS, {user1Id}),
+        findByUser1IdAndUser2Id: (user1Id, user2Id) => generateSearchURL("http://localhost:4000/api/conversations", searchMethods.CONVERSATIONS, {
             user1Id,
             user2Id
         }),
-        findByUser2Id: (user2Id) => generateSearchURL("http://localhost:8080/api/conversations", searchMethods.CONVERSATIONS, {user2Id}),
+        findByUser2Id: (user2Id) => generateSearchURL("http://localhost:4000/api/conversations", searchMethods.CONVERSATIONS, {user2Id}),
     },
 };
 
 export const PLANTS = {
-    URL: "http://localhost:8080/api/plants",
+    URL: "http://localhost:4000/api/plants",
     METHOD: {
         GET: 'GET',
         POST: 'POST',
         PUT: 'PUT',
         DELETE: 'DELETE',
     },
-    ID: (id) => `http://localhost:8080/api/plants/${id}`,
+    ID: (id) => `http://localhost:4000/api/plants/${id}`,
     SEARCH: {
-        findByOwnerId: (ownerId) => generateSearchURL("http://localhost:8080/api/plants", searchMethods.PLANTS, {ownerId}),
-        findByCurrentState: (currentState) => generateSearchURL("http://localhost:8080/api/plants", searchMethods.PLANTS, {currentState}),
-        findBySpeciesId: (speciesId) => generateSearchURL("http://localhost:8080/api/plants", searchMethods.PLANTS, {speciesId}),
+        findByOwnerId: (ownerId) => generateSearchURL("http://localhost:4000/api/plants", searchMethods.PLANTS, {ownerId}),
+        findByCurrentState: (currentState) => generateSearchURL("http://localhost:4000/api/plants", searchMethods.PLANTS, {currentState}),
+        findBySpeciesId: (speciesId) => generateSearchURL("http://localhost:4000/api/plants", searchMethods.PLANTS, {speciesId}),
     },
 };
 
 export const MEDIAS = {
-    URL: "http://localhost:8080/api/medias",
+    URL: "http://localhost:4000/api/medias",
     METHOD: {
         GET: 'GET',
         POST: 'POST',
         PUT: 'PUT',
         DELETE: 'DELETE',
     },
-    ID: (id) => `http://localhost:8080/api/medias/${id}`,
+    ID: (id) => `http://localhost:4000/api/medias/${id}`,
     SEARCH: {
-        findByUserId: (userId) => generateSearchURL("http://localhost:8080/api/medias", searchMethods.MEDIAS, {userId}),
-        findByEntityTypeAndEntityId: (entityType, entityId) => generateSearchURL("http://localhost:8080/api/medias", searchMethods.MEDIAS, {
+        findByUserId: (userId) => generateSearchURL("http://localhost:4000/api/medias", searchMethods.MEDIAS, {userId}),
+        findByEntityTypeAndEntityId: (entityType, entityId) => generateSearchURL("http://localhost:4000/api/medias", searchMethods.MEDIAS, {
             entityType,
             entityId
         }),
@@ -197,15 +197,15 @@ export const MEDIAS = {
 };
 
 export const LOGINS = {
-    URL: "http://localhost:8080/api/logins",
+    URL: "http://localhost:4000/api/logins",
     METHOD: {
         GET: 'GET',
         POST: 'POST',
         PUT: 'PUT',
         DELETE: 'DELETE',
     },
-    ID: (id) => `http://localhost:8080/api/logins/${id}`,
+    ID: (id) => `http://localhost:4000/api/logins/${id}`,
     SEARCH: {
-        findByEmail: (email) => generateSearchURL("http://localhost:8080/api/logins", searchMethods.LOGINS, {email}),
+        findByEmail: (email) => generateSearchURL("http://localhost:4000/api/logins", searchMethods.LOGINS, {email}),
     },
 };

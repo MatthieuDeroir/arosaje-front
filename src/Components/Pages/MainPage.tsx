@@ -88,15 +88,15 @@ const MainPage = () => {
 
 
     if (error) {
-        return <div className="error">An error occurred: {error.message}</div>;
+        return <div className="mainPage error">An error occurred: {error.message}</div>;
     }
 
     if (loading) {
-        return <div className="loading">Loading...</div>;
+        return <div className="mainPage loading">Loading...</div>;
     }
 
     if (posts.length === 0) {
-        return <div className="noPosts">No posts available.</div>;
+        return <div className="mainPage noPosts">No posts available.</div>;
     }
 
 

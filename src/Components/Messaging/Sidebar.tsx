@@ -7,17 +7,15 @@ import { USERS, CONVERSATIONS } from '../../routes';
 import { AuthContext } from '../../Contexts/AuthContext';
 import { User } from '../../Interfaces/User';
 import { Plant } from '../../Interfaces/Plant';
+import { conversations } from './mockData';
 
 interface SidebarProps {
     isconversationselected: boolean;
 }
 
 const SidebarDiv = styled.div<{ isconversationselected: boolean }>`
-    height: calc(100vh - 100px);
     overflow-y: auto;
     padding: 20px;
-    margin-top: 60px;
-
     @media (min-width: 768px) {
         width: ${props => (props.isconversationselected ? '300px' : '15%')};
     }
@@ -47,7 +45,7 @@ const RecipientDiv = styled.div<{ isSelected: boolean }>`
 `;
 
 const Sidebar: React.FC<SidebarProps> = ({isconversationselected}) => {
-    const [selectedConversation, setSelectedConversation] = useState<IConversation | null>(null);
+    const [selectedConversation_, setSelectedConversation] = useState<IConversation | null>(null);
     const [conversations, setConversations] = useState<IConversation[]>([]);
     const [showBotanistButton, setShowBotanistButton] = useState(false);
     const [selectedPlant, setSelectedPlant] = useState<Plant | null>(null);
@@ -112,6 +110,11 @@ const Sidebar: React.FC<SidebarProps> = ({isconversationselected}) => {
         }
     };
 
+    const [selectedConversationId, setSelectedConversationId] = useState<number|null> (null);
+
+    const selectedConversation = conversations.find(convo => convo.id === selectedConversationId);
+  
+    
     return (
         <SidebarDiv isconversationselected={isconversationselected}>
             {showBotanistButton && selectedPlant && (
@@ -119,15 +122,22 @@ const Sidebar: React.FC<SidebarProps> = ({isconversationselected}) => {
             )}
             {conversations.length > 0 ? (
                 conversations.map((conversation: IConversation) => (
-                    <RecipientDiv
-                        key={conversation.id}
-                        onClick={() => handleSelectConversation(conversation)}
-                        isSelected={selectedConversation?.id === conversation.id}
-                    >
-                        <RecipientPhoto src={conversation.recipient.photoUrl} alt={conversation.recipient.name}/>
-                        <RecipientName>{conversation.recipient.name}</RecipientName>
-                        <button onClick={(e) => {e.stopPropagation(); handleDeleteConversation(conversation.id);}}>Supprimer</button>
-                    </RecipientDiv>
+                    <div className="conversations-list">
+                        {conversations.map(convo => (
+                        <div key={convo.id} onClick={() => setSelectedConversationId(convo.id)}>
+                            Conversation {convo.id}
+                        </div>
+                        ))}
+                    </div>
+                    // <RecipientDiv
+                    //     key={conversation.id}
+                    //     onClick={() => handleSelectConversation(conversation)}
+                    //     isSelected={selectedConversation?.id === conversation.id}
+                    // >
+                    //     <RecipientPhoto src={conversation.recipient.photoUrl} alt={conversation.recipient.name}/>
+                    //     <RecipientName>{conversation.recipient.name}</RecipientName>
+                    //     <button onClick={(e) => {e.stopPropagation(); handleDeleteConversation(conversation.id);}}>Supprimer</button>
+                    // </RecipientDiv>
                 ))
             ) : (
                 <p>Il n'y a pas de conversations</p>

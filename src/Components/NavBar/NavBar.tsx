@@ -19,19 +19,6 @@ const NavBar: React.FC<NavBarProps> = ({onSettingsClick}) => {
         return null;
     }
 
-    const handleReset = () => {
-        document.documentElement.style.setProperty('--color1', '#48806c');
-        document.documentElement.style.setProperty('--color2', 'rgb(5, 5, 5)');
-    };
-
-    const handleChange = () => {
-        const color1 = '#' + Math.floor(Math.random() * 16777215).toString(16);
-        const color2 = '#' + Math.floor(Math.random() * 16777215).toString(16);
-
-        document.documentElement.style.setProperty('--color1', color1);
-        document.documentElement.style.setProperty('--color2', color2);
-    };
-
     const togglePopup = () => {
         setIsPopupOpen(!isPopupOpen);
     };
@@ -57,20 +44,15 @@ const NavBar: React.FC<NavBarProps> = ({onSettingsClick}) => {
                             <li>
                                 <Link to="/logout"><span className="fa-solid fa-power-off"></span></Link>
                             </li>
+                            <li>
+                                <Link to="/"><span className="fa-solid fa-gear"></span></Link>
+                            </li>
                         </>
                     ) : (
                         <li>
                             <Link to="/login"><span className="fa-solid fa-power-off"></span></Link>
                         </li>
                     )}
-                    <li>
-                        <a href="#" onClick={(e) => {
-                            e.preventDefault();
-                            togglePopup();
-                        }}><span className="fa-solid fa-gear"></span></a>
-                        {isPopupOpen &&
-                            <Popup handleClose={togglePopup} handleReset={handleReset} handleChange={handleChange}/>}
-                    </li>
                 </div>
             </ul>
         </nav>

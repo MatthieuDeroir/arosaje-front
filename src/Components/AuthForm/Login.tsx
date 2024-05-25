@@ -70,9 +70,9 @@ function Login() {
                 <div className="form-container">
                     <form onSubmit={handleSubmit} className="login-form">
                         <label>
-                            Email Adress <sup style={{fontSize: '0.6em'}}>*</sup>
+                            Login <sup style={{fontSize: '0.6em'}}>*</sup>
                             <input
-                                type="email"
+                                type="text"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 style={emailError ? {border: '1px solid red'} : {}}

@@ -76,7 +76,7 @@ const NewPlant = ({onClose}: { onClose?: () => void }) => {
                 uploadData.append("entityId", response.id.toString());
                 uploadData.append("userId", newPlant.ownerId.toString());
 
-                const uploadResponse = await fetch('http://localhost:8080/api/medias/upload/plant', {
+                const uploadResponse = await fetch('http://localhost:4000/api/medias/upload/plant', {
                     method: 'POST',
                     body: uploadData,
                 });

@@ -1,26 +1,30 @@
+body {
+  --primary-color: #48806C;
+  --secondary-color: #1E382F;
+  --title-color: #E0E5CB;
+  --link-color: #69C0A2;
+  --paragraph-color: #48806C;
+}
+
 .mainPage {
-  margin: 3em 20% 0 20%;
+  margin: 3em 22.5% 0 22.5%;
   display: flex;
   flex-direction: column;
 }
 
 .error, .loading, .noPosts {
   padding: 20px;
-  margin: 20px 0;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
 .addPostButton, .cancelButton {
-  margin: auto;
-  padding: 0.3em 0.6em;
   display: flex;
-  align-items: center; /* Centre verticalement les éléments de la liste */
+  align-items: start; /* Centre verticalement les éléments de la liste */
   border: 0.1em solid #E0E5CB;
   border-radius: 4px;
   background-color: #48806CB3;
   cursor: pointer;
-  width: 90%;
   color: #E0E5CB;
   font-size: 1.2em;
 }
@@ -41,7 +45,7 @@ p{
 .newPostFormContainer {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  color: #E0E5CB;
 }
 
 .postLink {

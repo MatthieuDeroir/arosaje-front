@@ -1,0 +1,108 @@
+body {
+    --primary-color: #48806C;
+    --secondary-color: #1E382F;
+    --title-color: #E0E5CB;
+    --link-color: #69C0A2;
+    --paragraph-color: #E0E5CB;
+    --chat-contact: #527E19;
+    --datetime : #777171
+  }
+
+.conversation{
+    position: relative;
+    overflow-y: auto;
+    height: calc(100vh - 110px);
+    border-left: 1px solid #818181;
+    background-color: transparent;
+    width: 100%;
+}
+
+.chatForm{
+    /* border: 1px solid magenta; */
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid #818181;
+}
+
+.chatInput{
+    font-family: "Montserrat Alternates", sans-serif;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    background-color: transparent;
+    resize: none;
+    min-height: 4.5rem;
+    font-size: 1.25rem;
+    color: var(--datetime);
+}
+
+.chatInput:focus{
+    outline: none;
+}
+
+.chatButton{
+    font-family: "Montserrat Alternates", sans-serif;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    font-size: 1.25rem;
+    color: var(--datetime);
+}
+
+.chatMessage {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    color: var(--secondary-color);
+  }
+  
+  .msg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: fit-content;
+  }
+
+  .msg-currentUser{align-self: flex-end;}
+  .msg-contact{align-self: flex-start;}
+  
+  .chat-currentUser {
+    order: 1;
+    background-color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.563rem;
+    font-size: 1.25rem;
+    margin-right: 1rem;
+  }
+  
+  .chat-contact {
+    order: 2;
+    align-items: left;
+    background-color: var(--chat-contact);
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.563rem;
+    font-size: 1.25rem;
+    margin-left: 1rem;
+  }
+  
+  .time-currentUser {
+    order: 2;
+    align-items: right;
+    color: var(--datetime);
+  }
+  
+  .time-contact {
+    order: 1;
+    align-items: left;
+    color: var(--datetime);
+  }
+  

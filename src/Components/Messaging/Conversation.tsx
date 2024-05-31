@@ -28,6 +28,13 @@ const MessagingApp = () => {
 
   const currentUser = 1;
 
+  function formatTime(dateSent: string | number | Date) {
+    const date = new Date(dateSent);
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    return `${hours}:${minutes}`;
+  }
+
   return (
     <div className="conversation">
       <div className="conversations-list">
@@ -43,7 +50,7 @@ const MessagingApp = () => {
             {selectedConversation.messages.map(message => (
               <div key={message.id} className={message.senderId === currentUser ? "msg msg-currentUser" : "msg msg-contact"}>
                 <p className={message.senderId === currentUser ? "chat-currentUser" : "chat-contact"}>{message.content}</p>
-                <span className={message.senderId === currentUser ? "time-currentUser" : "time-contact"}>{message.dateSent}</span>
+                <span className={message.senderId === currentUser ? "time-currentUser" : "time-contact"}>{formatTime(message.dateSent)}</span>
               </div>
             ))}
           </div>
